@@ -1,218 +1,413 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Pedro Henrique | Portfolio</title>
 
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- Ícones -->
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            scroll-behavior:smooth;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        body{
-            font-family: 'Poppins', sans-serif;
-            background:#0f172a;
-            color:white;
-            line-height:1.6;
-        }
+        body {
+            font-family: 'Inter', sans-serif;
 
-        a{
-            text-decoration:none;
-            color:inherit;
-        }
-
-        .container{
-            width:90%;
-            max-width:1200px;
-            margin:auto;
-        }
-
-        /* HEADER */
-
-        header{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
             background:
-            linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
-            url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop') center/cover;
+                radial-gradient(circle at top left, #1e3a8a, transparent 30%),
+                radial-gradient(circle at bottom right, #2563eb, transparent 30%),
+                #020617;
+
+            color: white;
+            overflow-x: hidden;
         }
 
-        header h1{
-            font-size:4rem;
-            margin-bottom:10px;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        header p{
-            font-size:1.3rem;
-            color:#cbd5e1;
-            margin-bottom:30px;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        .buttons{
-            display:flex;
-            gap:15px;
-            flex-wrap:wrap;
-            justify-content:center;
+        section {
+            padding: 100px 0;
         }
 
-        .btn{
-            padding:14px 28px;
-            border-radius:12px;
-            background:#1e293b;
-            transition:0.3s;
-            font-weight:500;
-            border:1px solid #334155;
+        h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: #60a5fa;
         }
 
-        .btn:hover{
-            transform:translateY(-4px);
-            background:#2563eb;
+        /* NAVBAR */
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 8%;
+
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .highlight{
-            background:#2563eb;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #60a5fa;
         }
 
-        /* SECTIONS */
-
-        section{
-            padding:90px 0;
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
         }
 
-        section h2{
-            text-align:center;
-            font-size:2.5rem;
-            margin-bottom:40px;
-            color:#60a5fa;
+        .nav-links a {
+            transition: 0.3s;
+            font-weight: 500;
         }
 
-        .about p,
-        .experience p{
-            max-width:900px;
-            margin:auto;
-            text-align:center;
-            color:#cbd5e1;
-            font-size:1.1rem;
+        .nav-links a:hover {
+            color: #60a5fa;
         }
 
-        /* GRID */
+        /* HERO */
 
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-            gap:20px;
-            margin-top:40px;
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding-top: 120px;
         }
 
-        .card{
-            background:#1e293b;
-            padding:30px;
-            border-radius:18px;
-            transition:0.3s;
-            border:1px solid #334155;
+        .hero-text {
+            max-width: 850px;
         }
 
-        .card:hover{
-            transform:translateY(-8px);
-            border-color:#3b82f6;
+        .hero-text h1 {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 20px;
         }
 
-        .card h3{
-            margin-bottom:15px;
-            color:#60a5fa;
+        .hero-text h2 {
+            font-size: 1.7rem;
+            color: #60a5fa;
+            margin-bottom: 25px;
         }
 
-        .card p{
-            color:#cbd5e1;
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 35px;
         }
 
-        .card a{
-            display:inline-block;
-            margin-top:15px;
-            color:#60a5fa;
-            font-weight:600;
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 28px;
+
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            backdrop-filter: blur(15px);
+
+            transition: 0.4s;
+
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-6px);
+
+            background: #2563eb;
+
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .highlight {
+            background: #2563eb;
+        }
+
+        /* GLASS CARD */
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+
+            backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+
+            border-color: #3b82f6;
+
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        }
+
+        /* ABOUT */
+
+        .about p {
+            max-width: 900px;
+            margin: auto;
+
+            text-align: center;
+
+            color: #cbd5e1;
+
+            font-size: 1.1rem;
+
+            line-height: 2;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+
+            text-align: center;
+        }
+
+        .stat h1 {
+            font-size: 4rem;
+            color: #60a5fa;
+        }
+
+        .stat p {
+            color: #cbd5e1;
+            margin-top: 10px;
+        }
+
+        /* SKILLS */
+
+        .skill {
+            margin-bottom: 30px;
+        }
+
+        .skill p {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .bar {
+            width: 100%;
+            height: 12px;
+
+            background: #1e293b;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+
+            background: linear-gradient(to right, #2563eb, #60a5fa);
+
+            border-radius: 30px;
+        }
+
+        /* PROJECTS */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            color: #60a5fa;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            color: #60a5fa;
+            font-weight: 700;
         }
 
         /* TIMELINE */
 
-        .timeline{
-            max-width:900px;
-            margin:auto;
+        .timeline {
+            max-width: 900px;
+            margin: auto;
         }
 
-        .timeline-item{
-            background:#1e293b;
-            padding:25px;
-            border-left:4px solid #3b82f6;
-            margin-bottom:20px;
-            border-radius:12px;
+        .timeline-item {
+            border-left: 4px solid #3b82f6;
+            margin-bottom: 25px;
         }
 
-        .timeline-item h3{
-            color:#60a5fa;
+        .timeline-item h3 {
+            color: #60a5fa;
+            margin-bottom: 10px;
         }
 
-        .timeline-item span{
-            color:#94a3b8;
-            font-size:0.9rem;
+        .timeline-item span {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item p {
+            margin-top: 15px;
+            color: #cbd5e1;
+            line-height: 1.7;
         }
 
         /* FOOTER */
 
-        footer{
-            text-align:center;
-            padding:30px;
-            background:#020617;
-            color:#94a3b8;
+        footer {
+            text-align: center;
+
+            padding: 40px 0;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: #94a3b8;
         }
 
         /* RESPONSIVO */
 
-        @media(max-width:768px){
+        @media(max-width:900px) {
 
-            header h1{
-                font-size:2.5rem;
+            .hero-text h1 {
+                font-size: 3rem;
             }
 
-            header p{
-                font-size:1rem;
+            .nav-links {
+                display: none;
             }
 
-            section h2{
-                font-size:2rem;
+            .buttons {
+                justify-content: center;
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Pedro Henrique
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="#about">Sobre</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+            <li><a href="#projects">Projetos</a></li>
+
+            <li><a href="#experience">Experiência</a></li>
+
+            <li><a href="#contact">Contato</a></li>
+
+        </ul>
+
+    </nav>
+
     <!-- HERO -->
 
-    <header>
-        <div class="container">
+    <section class="hero container">
 
-            <h1>Pedro Henrique Marques Amorim</h1>
+        <div class="hero-text" data-aos="fade-up">
+
+            <h1>
+                Pedro Henrique
+            </h1>
+
+            <h2>
+                Computer Engineering Student
+            </h2>
 
             <p>
-                Estudante de Engenharia da Computação • Future Software Developer
+                Desenvolvedor em formação apaixonado por tecnologia,
+                software, programação e inovação.
+                Buscando constantemente evolução profissional
+                e experiência prática em projetos reais.
             </p>
 
             <div class="buttons">
@@ -221,71 +416,87 @@
                     📧 Email
                 </a>
 
-                <a href="https://www.linkedin.com/in/pedro-henrique-marques-amorim-1a16b140a/" target="_blank" class="btn">
+                <a href="https://www.linkedin.com/in/pedro-henrique-marques-amorim-1a16b140a/"
+                    target="_blank" class="btn">
                     💼 LinkedIn
                 </a>
 
-                <a href="https://github.com/pedrohenriquemarquesamrorim" target="_blank" class="btn">
+                <a href="https://github.com/pedrohenriquemarquesamrorim"
+                    target="_blank" class="btn">
                     💻 GitHub
                 </a>
 
-                <!-- BOTÃO PDF -->
                 <a href="Currículo.pdf" download class="btn highlight">
-                    📄 Baixar Currículo
+                    📄 Currículo
                 </a>
 
             </div>
 
         </div>
-    </header>
 
-    <!-- SOBRE -->
+    </section>
 
-    <section class="about">
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
 
         <div class="container">
 
-            <h2>Sobre Mim / About Me</h2>
+            <h2 data-aos="fade-up">
+                Sobre Mim
+            </h2>
 
-            <p>
-                Me chamo Pedro Henrique e atualmente curso Engenharia da Computação no Centro Universitário de Brasília (CEUB).
-                Sou apaixonado por tecnologia desde pequeno e busco constantemente desenvolver minhas habilidades em programação,
-                desenvolvimento de software e resolução de problemas.
+            <p data-aos="fade-up">
+
+                Me chamo Pedro Henrique e atualmente curso Engenharia da Computação
+                no Centro Universitário de Brasília (CEUB).
+
+                Sou apaixonado por tecnologia desde pequeno
+                e estou constantemente desenvolvendo minhas habilidades
+                em programação, desenvolvimento de software e resolução de problemas.
+
                 <br><br>
-                Atualmente estudo Linguagem C, Python, Git/GitHub e desenvolvimento web.
-                Procuro oportunidades para adquirir experiência prática e contribuir em projetos reais.
-                <br><br>
-                I am currently studying Computer Engineering at CEUB University.
-                I am passionate about technology and constantly improving my programming and software development skills.
+
+                Atualmente estudo Linguagem C, Python,
+                Git/GitHub e desenvolvimento web moderno.
+
             </p>
 
         </div>
 
     </section>
 
-    <!-- HABILIDADES -->
+    <!-- STATS -->
 
-    <section class="skills">
+    <section>
 
         <div class="container">
 
-            <h2>Habilidades / Skills</h2>
+            <div class="stats">
 
-            <div class="grid">
+                <div class="card stat" data-aos="zoom-in">
 
-                <div class="card">💻 C Programming</div>
+                    <h1>3</h1>
 
-                <div class="card">🐍 Python</div>
+                    <p>Projetos Desenvolvidos</p>
 
-                <div class="card">🔧 Git & GitHub</div>
+                </div>
 
-                <div class="card">🧠 Problem Solving</div>
+                <div class="card stat" data-aos="zoom-in">
 
-                <div class="card">🤝 Team Work</div>
+                    <h1>1+</h1>
 
-                <div class="card">⚡ Adaptabilidade</div>
+                    <p>Ano Estudando Tecnologia</p>
 
-                <div class="card">🎯 Proatividade</div>
+                </div>
+
+                <div class="card stat" data-aos="zoom-in">
+
+                    <h1>100%</h1>
+
+                    <p>Dedicação e Evolução</p>
+
+                </div>
 
             </div>
 
@@ -293,49 +504,115 @@
 
     </section>
 
-    <!-- PROJETOS -->
+    <!-- SKILLS -->
 
-    <section class="projects">
+    <section id="skills">
 
         <div class="container">
 
-            <h2>Projetos / Projects</h2>
+            <h2 data-aos="fade-up">
+                Skills & Technologies
+            </h2>
+
+            <div class="card">
+
+                <div class="skill">
+
+                    <p>Python</p>
+
+                    <div class="bar">
+                        <span style="width:80%"></span>
+                    </div>
+
+                </div>
+
+                <div class="skill">
+
+                    <p>C Programming</p>
+
+                    <div class="bar">
+                        <span style="width:75%"></span>
+                    </div>
+
+                </div>
+
+                <div class="skill">
+
+                    <p>HTML & CSS</p>
+
+                    <div class="bar">
+                        <span style="width:90%"></span>
+                    </div>
+
+                </div>
+
+                <div class="skill">
+
+                    <p>Git & GitHub</p>
+
+                    <div class="bar">
+                        <span style="width:70%"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 data-aos="fade-up">
+                Projetos
+            </h2>
 
             <div class="grid">
 
-                <div class="card">
+                <div class="card project-card" data-aos="fade-up">
 
-                    <h3>🎬 Edição de Filme - Projeto Escolar</h3>
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1170&auto=format&fit=crop">
+
+                    <h3>🎬 Edição de Filme</h3>
 
                     <p>
                         Projeto campeão em competição escolar com premiação.
-                        Atuei na edição, montagem e finalização do vídeo.
+                        Atuação na edição e finalização do vídeo.
                     </p>
 
                     <a href="https://youtu.be/Rhhu9CJnxXs" target="_blank">
-                        Ver Trailer →
+                        Ver Projeto →
                     </a>
 
                 </div>
 
-                <div class="card">
+                <div class="card project-card" data-aos="fade-up">
 
-                    <h3>🏆 Simulação de Jovem Executivo</h3>
+                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1170&auto=format&fit=crop">
+
+                    <h3>🏆 Jovem Executivo</h3>
 
                     <p>
-                        Participação em programa de simulação empresarial realizado pela INTERNATIONALI NEGOTIA.
-                        Conquista de 3º lugar e certificado de reconhecimento.
+                        Simulação empresarial focada em liderança,
+                        estratégia e trabalho em equipe.
                     </p>
 
                 </div>
 
-                <div class="card">
+                <div class="card project-card" data-aos="fade-up">
+
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1172&auto=format&fit=crop">
 
                     <h3>🌐 Portfolio Website</h3>
 
                     <p>
-                        Desenvolvimento do meu próprio portfólio utilizando HTML e CSS moderno
-                        com design responsivo.
+                        Desenvolvimento de um portfólio moderno
+                        utilizando HTML e CSS responsivo.
                     </p>
 
                 </div>
@@ -346,34 +623,44 @@
 
     </section>
 
-    <!-- EXPERIÊNCIA -->
+    <!-- EXPERIENCE -->
 
-    <section class="experience">
+    <section id="experience">
 
         <div class="container">
 
-            <h2>Experiência & Formação</h2>
+            <h2 data-aos="fade-up">
+                Experiência & Formação
+            </h2>
 
             <div class="timeline">
 
-                <div class="timeline-item">
+                <div class="card timeline-item" data-aos="fade-right">
 
-                    <h3>🎓 Engenharia da Computação — CEUB</h3>
+                    <h3>
+                        🎓 Engenharia da Computação — CEUB
+                    </h3>
 
-                    <span>2026 - Atualmente</span>
+                    <span>
+                        2026 - Atualmente
+                    </span>
 
                     <p>
-                        Graduação em Engenharia da Computação com foco em tecnologia,
-                        programação e desenvolvimento de software.
+                        Graduação em Engenharia da Computação
+                        com foco em programação e tecnologia.
                     </p>
 
                 </div>
 
-                <div class="timeline-item">
+                <div class="card timeline-item" data-aos="fade-right">
 
-                    <h3>🏫 Colégio Galois</h3>
+                    <h3>
+                        🏫 Colégio Galois
+                    </h3>
 
-                    <span>2019 - 2025</span>
+                    <span>
+                        2019 - 2025
+                    </span>
 
                     <p>
                         Ensino Fundamental II e Ensino Médio completo.
@@ -381,15 +668,19 @@
 
                 </div>
 
-                <div class="timeline-item">
+                <div class="card timeline-item" data-aos="fade-right">
 
-                    <h3>💼 Jovem Executivo — INTERNATIONALI NEGOTIA</h3>
+                    <h3>
+                        💼 INTERNATIONALI NEGOTIA
+                    </h3>
 
-                    <span>Projeto Empresarial</span>
+                    <span>
+                        Projeto Empresarial
+                    </span>
 
                     <p>
-                        Simulação empresarial em equipe durante dois anos consecutivos,
-                        desenvolvendo liderança, comunicação e trabalho em grupo.
+                        Desenvolvimento de liderança,
+                        comunicação e trabalho em equipe.
                     </p>
 
                 </div>
@@ -400,22 +691,28 @@
 
     </section>
 
-    <!-- CONTATO -->
+    <!-- CONTACT -->
 
-    <section class="contact">
+    <section id="contact">
 
         <div class="container">
 
-            <h2>Contato / Contact</h2>
+            <h2 data-aos="fade-up">
+                Contato
+            </h2>
 
-            <div class="buttons">
+            <div class="buttons" style="justify-content:center;">
 
                 <a href="mailto:pedrohema07@gmail.com" class="btn">
+
                     📧 pedrohema07@gmail.com
+
                 </a>
 
                 <a href="tel:+5561998672719" class="btn">
+
                     📱 +55 61 99867-2719
+
                 </a>
 
             </div>
@@ -429,10 +726,25 @@
     <footer>
 
         <p>
-            © 2026 Pedro Henrique Marques Amorim • Built with HTML, CSS & dedication 🚀
+            © 2026 Pedro Henrique Marques Amorim •
+            Built with HTML, CSS & ambition 🚀
         </p>
 
     </footer>
 
+    <!-- AOS -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+
+    </script>
+
 </body>
+
 </html>
