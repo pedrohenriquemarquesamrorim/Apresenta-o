@@ -7,9 +7,6 @@ Este é meu portfólio pessoal desenvolvido com HTML, CSS e JavaScript.
 Estudante de Engenharia da Computação no Centro Universitário de Brasília.
 
 ## 🛠️ Tecnologias
-- HTML
-- CSS
-- JavaScript
 - C
 - Python
 
