@@ -16,7 +16,7 @@ Estudante de Engenharia da Computação no Centro Universitário de Brasília.
 
 ## 📫 Contato
 - Email: pedrohema07@gmail.com
-- LinkedIn: Pedro Henrique
+- LinkedIn: [Pedro Henrique](https://www.linkedin.com/in/pedro-henrique-marques-amorim-1a16b140a/)
 - GitHub: pedrohenriquemarquesamrorim
 
 ---
