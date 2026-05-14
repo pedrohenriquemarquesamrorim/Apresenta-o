@@ -4,83 +4,435 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Henrique | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            background:#0f172a;
+            color:white;
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        /* HEADER */
+
+        header{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            background:
+            linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
+            url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop') center/cover;
+        }
+
+        header h1{
+            font-size:4rem;
+            margin-bottom:10px;
+        }
+
+        header p{
+            font-size:1.3rem;
+            color:#cbd5e1;
+            margin-bottom:30px;
+        }
+
+        .buttons{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+            justify-content:center;
+        }
+
+        .btn{
+            padding:14px 28px;
+            border-radius:12px;
+            background:#1e293b;
+            transition:0.3s;
+            font-weight:500;
+            border:1px solid #334155;
+        }
+
+        .btn:hover{
+            transform:translateY(-4px);
+            background:#2563eb;
+        }
+
+        .highlight{
+            background:#2563eb;
+        }
+
+        /* SECTIONS */
+
+        section{
+            padding:90px 0;
+        }
+
+        section h2{
+            text-align:center;
+            font-size:2.5rem;
+            margin-bottom:40px;
+            color:#60a5fa;
+        }
+
+        .about p,
+        .experience p{
+            max-width:900px;
+            margin:auto;
+            text-align:center;
+            color:#cbd5e1;
+            font-size:1.1rem;
+        }
+
+        /* GRID */
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+            gap:20px;
+            margin-top:40px;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:30px;
+            border-radius:18px;
+            transition:0.3s;
+            border:1px solid #334155;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            border-color:#3b82f6;
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            color:#60a5fa;
+        }
+
+        .card p{
+            color:#cbd5e1;
+        }
+
+        .card a{
+            display:inline-block;
+            margin-top:15px;
+            color:#60a5fa;
+            font-weight:600;
+        }
+
+        /* TIMELINE */
+
+        .timeline{
+            max-width:900px;
+            margin:auto;
+        }
+
+        .timeline-item{
+            background:#1e293b;
+            padding:25px;
+            border-left:4px solid #3b82f6;
+            margin-bottom:20px;
+            border-radius:12px;
+        }
+
+        .timeline-item h3{
+            color:#60a5fa;
+        }
+
+        .timeline-item span{
+            color:#94a3b8;
+            font-size:0.9rem;
+        }
+
+        /* FOOTER */
+
+        footer{
+            text-align:center;
+            padding:30px;
+            background:#020617;
+            color:#94a3b8;
+        }
+
+        /* RESPONSIVO */
+
+        @media(max-width:768px){
+
+            header h1{
+                font-size:2.5rem;
+            }
+
+            header p{
+                font-size:1rem;
+            }
+
+            section h2{
+                font-size:2rem;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<header>
-    <div class="container">
-        <h1>Pedro Henrique Marques Amorim</h1>
-        <p>Estudante de Engenharia da Computação | Future Software Developer</p>
+    <!-- HERO -->
 
-        <div class="buttons">
-            <a href="mailto:pedrohema07@gmail.com" class="btn">Email</a>
-            <a href="https://www.linkedin.com/in/pedro-henrique-marques-amorim-1a16b140a/" class="btn">LinkedIn</a>
-            <a href="https://github.com/pedrohenriquemarquesamrorim" class="btn">GitHub</a>
-            <a href="curriculo.pdf" class="btn highlight" download>Baixar CV</a>
+    <header>
+        <div class="container">
+
+            <h1>Pedro Henrique Marques Amorim</h1>
+
+            <p>
+                Estudante de Engenharia da Computação • Future Software Developer
+            </p>
+
+            <div class="buttons">
+
+                <a href="mailto:pedrohema07@gmail.com" class="btn">
+                    📧 Email
+                </a>
+
+                <a href="https://www.linkedin.com/in/pedro-henrique-marques-amorim-1a16b140a/" target="_blank" class="btn">
+                    💼 LinkedIn
+                </a>
+
+                <a href="https://github.com/pedrohenriquemarquesamrorim" target="_blank" class="btn">
+                    💻 GitHub
+                </a>
+
+                <!-- BOTÃO PDF -->
+                <a href="Currículo.pdf" download class="btn highlight">
+                    📄 Baixar Currículo
+                </a>
+
+            </div>
+
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="about">
-    <h2>Sobre Mim / About Me</h2>
-    <p>
-        Me chamo Pedro Henrique, atualmente cursando Engenharia da Computação no Centro Universitário de Brasília.
-        Busco oportunidades no mercado de trabalho para aprimorar minhas habilidades e crescer profissionalmente.
-        <br><br>
-        I am currently studying Computer Engineering at the University Center of Brasília.
-        I am looking for opportunities in the tech industry to improve my skills and grow professionally.
-    </p>
-</section>
+    <!-- SOBRE -->
 
-<section class="skills">
-    <h2>Habilidades / Skills</h2>
+    <section class="about">
 
-    <div class="grid">
-        <div class="card">C Programming</div>
-        <div class="card">Python</div>
-        <div class="card">Git & GitHub</div>
-        <div class="card">VS Code</div>
-        <div class="card">PyCharm</div>
-        <div class="card">Problem Solving</div>
-    </div>
-</section>
+        <div class="container">
 
-<section class="projects">
-    <h2>Projetos / Projects</h2>
+            <h2>Sobre Mim / About Me</h2>
 
-    <div class="card">
-        <h3>Edição de Filme - Projeto Escolar</h3>
-        <p>Projeto campeão em competição escolar com premiação. Atuei na edição e finalização do vídeo.</p>
-        <a href="https://youtu.be/Rhhu9CJnxXs" target="_blank">Ver Trailer</a>
-    </div>
+            <p>
+                Me chamo Pedro Henrique e atualmente curso Engenharia da Computação no Centro Universitário de Brasília (CEUB).
+                Sou apaixonado por tecnologia desde pequeno e busco constantemente desenvolver minhas habilidades em programação,
+                desenvolvimento de software e resolução de problemas.
+                <br><br>
+                Atualmente estudo Linguagem C, Python, Git/GitHub e desenvolvimento web.
+                Procuro oportunidades para adquirir experiência prática e contribuir em projetos reais.
+                <br><br>
+                I am currently studying Computer Engineering at CEUB University.
+                I am passionate about technology and constantly improving my programming and software development skills.
+            </p>
 
-    <div class="card">
-        <h3>Simulação de Jovem Executivo</h3>
+        </div>
+
+    </section>
+
+    <!-- HABILIDADES -->
+
+    <section class="skills">
+
+        <div class="container">
+
+            <h2>Habilidades / Skills</h2>
+
+            <div class="grid">
+
+                <div class="card">💻 C Programming</div>
+
+                <div class="card">🐍 Python</div>
+
+                <div class="card">🔧 Git & GitHub</div>
+
+                <div class="card">🧠 Problem Solving</div>
+
+                <div class="card">🤝 Team Work</div>
+
+                <div class="card">⚡ Adaptabilidade</div>
+
+                <div class="card">🎯 Proatividade</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJETOS -->
+
+    <section class="projects">
+
+        <div class="container">
+
+            <h2>Projetos / Projects</h2>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>🎬 Edição de Filme - Projeto Escolar</h3>
+
+                    <p>
+                        Projeto campeão em competição escolar com premiação.
+                        Atuei na edição, montagem e finalização do vídeo.
+                    </p>
+
+                    <a href="https://youtu.be/Rhhu9CJnxXs" target="_blank">
+                        Ver Trailer →
+                    </a>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🏆 Simulação de Jovem Executivo</h3>
+
+                    <p>
+                        Participação em programa de simulação empresarial realizado pela INTERNATIONALI NEGOTIA.
+                        Conquista de 3º lugar e certificado de reconhecimento.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🌐 Portfolio Website</h3>
+
+                    <p>
+                        Desenvolvimento do meu próprio portfólio utilizando HTML e CSS moderno
+                        com design responsivo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+
+    <section class="experience">
+
+        <div class="container">
+
+            <h2>Experiência & Formação</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <h3>🎓 Engenharia da Computação — CEUB</h3>
+
+                    <span>2026 - Atualmente</span>
+
+                    <p>
+                        Graduação em Engenharia da Computação com foco em tecnologia,
+                        programação e desenvolvimento de software.
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <h3>🏫 Colégio Galois</h3>
+
+                    <span>2019 - 2025</span>
+
+                    <p>
+                        Ensino Fundamental II e Ensino Médio completo.
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <h3>💼 Jovem Executivo — INTERNATIONALI NEGOTIA</h3>
+
+                    <span>Projeto Empresarial</span>
+
+                    <p>
+                        Simulação empresarial em equipe durante dois anos consecutivos,
+                        desenvolvendo liderança, comunicação e trabalho em grupo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="contact">
+
+        <div class="container">
+
+            <h2>Contato / Contact</h2>
+
+            <div class="buttons">
+
+                <a href="mailto:pedrohema07@gmail.com" class="btn">
+                    📧 pedrohema07@gmail.com
+                </a>
+
+                <a href="tel:+5561998672719" class="btn">
+                    📱 +55 61 99867-2719
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
         <p>
-            Participação em programa de simulação empresarial. 3º lugar no primeiro ano e certificado de reconhecimento no último ano.
+            © 2026 Pedro Henrique Marques Amorim • Built with HTML, CSS & dedication 🚀
         </p>
-    </div>
 
-</section>
-
-<section class="experience">
-    <h2>Experiência / Experience</h2>
-    <p>
-        Ainda não possuo experiência profissional formal, mas busco oportunidades para desenvolver minhas habilidades
-        e contribuir em projetos reais.
-        <br><br>
-        I do not yet have formal professional experience, but I am seeking opportunities to develop my skills
-        and contribute to real-world projects.
-    </p>
-</section>
-
-<footer>
-    <p>© 2026 Pedro Henrique | Built with HTML, CSS & dedication</p>
-</footer>
-
-<script src="script.js"></script>
+    </footer>
 
 </body>
 </html>
